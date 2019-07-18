@@ -1,0 +1,455 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Deliforce thirdparty Lambda
+Globals:
+  Function:
+    Environment:
+      Variables:
+        bucketName: devuser-constant
+        constantFileName: constant.json
+Resources:
+  ApiGateway:
+    Properties:
+      DefinitionUri: s3://devuserthirdparty/c1db9029051772dd432f22d76f336af6
+      StageName: Development
+    Type: AWS::Serverless::Api
+  DeliforcethirdpartyauthMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/5d49a35650eafbd712e7678bc997fb2e
+      FunctionName: Deliforce_third_party_auth
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartycustomerdeleteMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/c8aa94ae38883cd4de5c69ff6075b799
+      FunctionName: Deliforce_third_party_customer_delete
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartycustomergetMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/b988b67bf4a2f841819c7395417894d3
+      FunctionName: Deliforce_third_party_customer_get
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartycustomerpostMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/0f025d536857f2c3fba8a2bba4de6a21
+      FunctionName: Deliforce_third_party_customer_post
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartycustomerputMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/f002c74f0cffd0f6414c3bdacd89c55c
+      FunctionName: Deliforce_third_party_customer_put
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartycustomersearchbynameMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/22178b16c7a605b6d207a8a027ab4d32
+      FunctionName: Deliforce_third_party_Customer_Search_By_Name
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartycustomersearchbyphoneMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/aee90dbc2704143cabbb340dc4b49309
+      FunctionName: Deliforce_third_party_customer_search_by_phone
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartydriverblockUnbockMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/4587162e0f253cc475fdf6c2ae9c64bc
+      FunctionName: Deliforce_third_party_driver_blockUnbock
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartydrivercreateMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/185d19d4488f1d41d7a91da4fdfa7861
+      FunctionName: Deliforce_third_party_driver_create
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartydriverdeleteMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/a7cc333176eaf078c910711f5ecb45b7
+      FunctionName: Deliforce_third_party_driver_delete
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartydrivergetdMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/3227a88c88136dce1e7c704301ef0566
+      FunctionName: Deliforce_third_party_driver_get
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartydriverlocationgetMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/24e4244a2d4dbfcda2a6d0c21c6c4dbe
+      FunctionName: Deliforce_third_party_driver_location_get
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartydriverputMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/61e763f368ef19bc278a750e20819ca2
+      FunctionName: Deliforce_third_party_driver_put
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartyfetchDriverBasedOnteamIdMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/f29ed0454c49987ee65f2f39812646b9
+      FunctionName: Deliforce_third_party_fetchDriverBasedOnteamId
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartyfetchDriversBasedOnDriverStatusMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/c1ca87798ed99d6bc552f4eecae78bc3
+      FunctionName: Deliforce_third_party_fetchDriversBasedOnDriverStatus
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartyfetchdriverbasedondriveridMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/950052d2ade6bc0e91eabb8d6ec1e501
+      FunctionName: Deliforce_third_party_fetchDriverBasedOnDriverId
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartygetstatusListMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/eb82255700156e1fef3eb7201b4ceffd
+      FunctionName: Deliforce_third_party_getstatusList
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartymanagerdeleteMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/6d09922265784c117092cbf583c30dca
+      FunctionName: Deliforce_third_party_manager_delete
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartymanagergetMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/af73a12e75b76185b3054cc883a8f5c5
+      FunctionName: Deliforce_third_party_manager_get
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartymanagerpostMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/7a29b4f4b322063e228d5d4f940d9527
+      FunctionName: Deliforce_third_party_manager_post
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartymanagerupdateMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/060a69d77deb0c0be53a2a08fe1cdf12
+      FunctionName: Deliforce_third_party_manager_update
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartymultipletaskcreateMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/3e2ef29c566f250b350dd2a23010e61c
+      FunctionName: Deliforce_third_party_multiple_task_create
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartytaskalltasksMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/e6ed27239170ff58aef3b97fd1bf34e1
+      FunctionName: Deliforce_third_party_task_alltasks
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartytaskassignMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/98b54a69ebd425c50f4f277fbe7d44d8
+      FunctionName: Deliforce_third_party_task_assign
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartytaskautoAllocationMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/00b3bb237d39858d276077099b4cc5ac
+      FunctionName: Deliforce_third_party_task_autoAllocation
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartytaskcreateMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/f6dc4839c4e37bf60dee97303abbbabd
+      FunctionName: Deliforce_third_party_task_post
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartytaskdeleteMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/5e9a9c1f305ae8d8b9c11477555694aa
+      FunctionName: Deliforce_third_party_task_delete
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartytaskfetchbyorderidMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/fe5d9a6d97ff8075797fde45734d2f8f
+      FunctionName: Deliforce_third_party_task_fetch_by_orderid
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartytaskfetchbytaskidMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/d5b85948e43c582c75e0b92fb50319b8
+      FunctionName: Deliforce_third_party_task_fetch_by_taskid
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartytaskmqttMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/ae6e323bbc17d7df608bca34dec1cc78
+      FunctionName: Deliforce_third_party_task_mqtt
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartyteamcreateMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/1255f81e75d644f85cd42840d222b462
+      FunctionName: Deliforce_third_party_team_create
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartyteamdeleteMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/d7822fcd1a1731d7bdf8eb41d162327c
+      FunctionName: Deliforce_third_party_team_delete
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartyteamgetMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/9e1e0d455c0c7c0537e432d1ce3cace9
+      FunctionName: Deliforce_third_party_team_get
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartyteamputMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/37eeb249a04bdbb0f4a36d4fc485b284
+      FunctionName: Deliforce_third_party_team_put
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartytsakupdateMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/4e845e248d562a6d509b160d99d05043
+      FunctionName: Deliforce_third_party_task_update
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartyupdatetaskstatusMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/cf8328a565b2c7cafbb0ac0829223423
+      FunctionName: Deliforce_third_party_update_task_status
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartywebhookdeleteMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/86745cffd2ce8e61213f058596dc994b
+      FunctionName: Deliforce_third_party_webHook_delete
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartywebhookgetMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/ed4820c5fc59437f877408163da6fcf0
+      FunctionName: Deliforce_third_party_webHook_get
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartywebhookpostMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/f7e7463ab7f8b7c967570df744b9a49b
+      FunctionName: Deliforce_third_party_webHook_post
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+  DeliforcethirdpartywebhookupdateMethod:
+    Properties:
+      CodeUri: s3://devuserthirdparty/b9c85a3a235885e9f80fcfeb455626db
+      FunctionName: Deliforce_third_party_webHook_update
+      Handler: index.handler
+      MemorySize: 3008
+      Policies: AWSLambdaFullAccess
+      Role: arn:aws:iam::786724127547:role/DevUser-poc
+      Runtime: nodejs8.10
+      Timeout: 900
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31
