@@ -1,25 +1,28 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Deliforce thirdparty Lambda
+Transform: AWS::Serverless-2016-10-31
+Description: 'Deliforce thirdparty Lambda'
 Globals:
   Function:
     Environment:
       Variables:
         bucketName: devuser-constant
         constantFileName: constant.json
+
 Resources:
   ApiGateway:
+    Type: 'AWS::Serverless::Api'
     Properties:
-      DefinitionUri: s3://devuserthirdparty/c1db9029051772dd432f22d76f336af6
       StageName: Development
-    Type: AWS::Serverless::Api
-  DeliforcethirdpartyauthMethod:
-    Properties:
-      CodeUri: s3://devuserthirdparty/5d49a35650eafbd712e7678bc997fb2e
-      FunctionName: Deliforce_third_party_auth
-      Handler: index.handler
-      MemorySize: 3008
-      Policies: AWSLambdaFullAccess
-      Role: arn:aws:iam::786724127547:role/DevUser-poc
-      Runtime: nodejs8.10
-      Timeout: 900
-      Type: AWS::Serverless::Function
+      DefinitionUri: ./Deliforce_thirdparty_api.yaml
+
+  DeliforcethirdpartydrivergetdMethod:
+     Type: AWS::Serverless::Function
+     Properties:
+       FunctionName: Deliforce_third_party_driver_get
+       Timeout: 900
+       Handler: index.handler
+       Runtime: nodejs8.10
+       CodeUri: ./Deliforce_third_party_driver_get/Deliforce_third_party_driver_get.zip
+       MemorySize: 3008
+       Policies: AWSLambdaFullAccess
+       Role: arn:aws:iam::641553134660:role/service-role/ga-deliforce
